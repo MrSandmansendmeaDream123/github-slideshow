@@ -1,0 +1,25 @@
+import java.util.*;
+class Solution {
+    ArrayDeque<Integer> tski = new ArrayDeque<Integer>();
+    public int singleNumber(int[] nums) {
+              int result = 0;
+      for(int x: nums)
+      {
+         tski.add(x); 
+      }
+      while(!tski.isEmpty())
+      {
+         int find = tski.pop();
+      
+         if(tski.contains(find))
+         {
+            tski.remove(find);
+         }
+         else{
+            result = find;
+         }
+      
+      } 
+      return result;  
+    }
+}
